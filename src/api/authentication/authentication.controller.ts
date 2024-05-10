@@ -26,7 +26,7 @@ export class AuthenticationController {
   }
 
   @Patch()
-  update(@Body() updateAuthenticationDto: RegisterAuthenticationDto) {
-    return this.authenticationService.register(updateAuthenticationDto);
+  update(@Body() createAuthenticationDto: LoginAuthenticationDto) {
+    return this.authenticationService.register(createAuthenticationDto);
   }
 }
