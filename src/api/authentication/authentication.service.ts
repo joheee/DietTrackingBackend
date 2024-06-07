@@ -7,14 +7,6 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class AuthenticationService {
   constructor(private prisma: PrismaService) {}
 
-  async findAll() {
-    return await this.prisma.user.findMany({
-      select: {
-        username: true,
-      },
-    });
-  }
-
   async login(loginAuthenticationDto: LoginAuthenticationDto) {
     return await this.prisma.user.findUnique({
       where: {
@@ -38,6 +30,4 @@ export class AuthenticationService {
       },
     });
   }
-
-  fillDetail(RegisterAuthenticationDto: RegisterAuthenticationDto) {}
 }
